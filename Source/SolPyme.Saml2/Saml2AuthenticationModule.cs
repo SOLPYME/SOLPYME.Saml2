@@ -43,7 +43,8 @@ namespace SolPyme.Saml2
 
                 var command = CommandFactory.GetCommand(moduleRelativePath);
 
-                command.Run(application.Request.Form).Apply(application.Response);
+                command.Run(new HttpRequestWrapper(application.Request))
+                    .Apply(application.Response);
             }
         }
 
