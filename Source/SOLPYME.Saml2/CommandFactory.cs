@@ -1,5 +1,4 @@
-﻿using SolPyme.Saml2;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +11,19 @@ namespace SolPyme.Saml2
     /// </summary>
     static class CommandFactory
     {
-        private static readonly Command notFoundCommand = new NotFoundCommand();
+        private static readonly ICommand notFoundCommand = new NotFoundCommand();
 
-        private static readonly IDictionary<string, Command> commands =
-        new Dictionary<string, Command>() { { "SignIn", new SignInCommand() } };
-
-        public static Command GetCommand(string path)
+        private static readonly IDictionary<string, ICommand> commands =
+        new Dictionary<string, ICommand>()
         {
-            if (commands.TryGetValue(path, out Command command))
+            { "SignIn", new SignInCommand() },
+            { "Acs", new AcsCommand() }
+        };
+
+        public static ICommand GetCommand(string path)
+        {
+            ICommand command;
+            if (commands.TryGetValue(path, out command))
             {
                 return command;
             }
