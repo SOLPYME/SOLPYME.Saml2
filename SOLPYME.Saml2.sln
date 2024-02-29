@@ -3,16 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34601.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLPYME.Saml2", "Source\SOLPYME.Saml2\SOLPYME.Saml2.csproj", "{93BA675E-A159-4701-B68B-C4B81015C556}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolPyme.Saml2", "Source\SOLPYME.Saml2\SolPyme.Saml2.csproj", "{93BA675E-A159-4701-B68B-C4B81015C556}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E0C4834E-A7A9-476F-8F46-B2D533190872}"
 	ProjectSection(SolutionItems) = preProject
-		Source\SOLPYME.Saml2.ruleset = Source\SOLPYME.Saml2.ruleset
 		LICENSE = LICENSE
 		README.md = README.md
+		Source\SOLPYME.Saml2.ruleset = Source\SOLPYME.Saml2.ruleset
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApplication", "SampleApplication\SampleApplication.csproj", "{A8933B89-1052-43EF-A884-07860375F3FA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{06911CE5-BA69-4230-A1C5-29A047FC6456}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1BCB60D6-D0C8-4474-9C1C-AA746405ED6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolPyme.Saml2.Tests", "Tests\SOLPYME.Saml2.Tests\SolPyme.Saml2.Tests.csproj", "{D3334615-C970-464F-8F45-50CB53A5C0EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApplication", "Source\SampleApplication\SampleApplication.csproj", "{A8933B89-1052-43EF-A884-07860375F3FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +30,10 @@ Global
 		{93BA675E-A159-4701-B68B-C4B81015C556}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93BA675E-A159-4701-B68B-C4B81015C556}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93BA675E-A159-4701-B68B-C4B81015C556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3334615-C970-464F-8F45-50CB53A5C0EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3334615-C970-464F-8F45-50CB53A5C0EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3334615-C970-464F-8F45-50CB53A5C0EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3334615-C970-464F-8F45-50CB53A5C0EE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A8933B89-1052-43EF-A884-07860375F3FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A8933B89-1052-43EF-A884-07860375F3FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8933B89-1052-43EF-A884-07860375F3FA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
@@ -31,5 +41,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{93BA675E-A159-4701-B68B-C4B81015C556} = {E0C4834E-A7A9-476F-8F46-B2D533190872}
+		{D3334615-C970-464F-8F45-50CB53A5C0EE} = {1BCB60D6-D0C8-4474-9C1C-AA746405ED6B}
+		{A8933B89-1052-43EF-A884-07860375F3FA} = {E0C4834E-A7A9-476F-8F46-B2D533190872}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEEDA2E8-D1E9-4CA6-9D11-70F9F4ACC7BA}
 	EndGlobalSection
 EndGlobal
