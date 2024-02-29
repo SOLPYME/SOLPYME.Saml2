@@ -14,6 +14,8 @@ namespace SolPyme.Saml2
         /// <summary>
         /// The http redirect binding according to saml bindings section 3.4.1
         /// </summary>
-        HttpRedirect
+        HttpRedirect,
+
+        HttpPost
     }
 }
