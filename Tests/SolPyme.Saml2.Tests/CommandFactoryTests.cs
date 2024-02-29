@@ -10,7 +10,13 @@ namespace SolPyme.Saml2.Tests
         [TestMethod]
         public void CommandFactory_Invalid_ReturnsNotFound()
         {
-            CommandFactory.GetCommand().Should().BeOfType<NotFoundCommand>();
+            CommandFactory.GetCommand("Invalid").Should().BeOfType<NotFoundCommand>();
+        }
+
+        [TestMethod]
+        public void CommandFactory_SignIn_ReturnsSignIn()
+        {
+            CommandFactory.GetCommand("SignIn").Should().BeOfType<SignInCommand>();
         }
     }
 }
