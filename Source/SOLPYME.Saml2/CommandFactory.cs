@@ -19,8 +19,7 @@ namespace SolPyme.Saml2
 
         public static Command GetCommand(string path)
         {
-            Command command;
-            if (commands.TryGetValue(path, out command))
+            if (commands.TryGetValue(path, out Command command))
             {
                 return command;
             }
