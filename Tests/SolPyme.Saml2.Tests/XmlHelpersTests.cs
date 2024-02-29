@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Xml.Linq;
 using FluentAssertions;
+using System.Xml;
 
 namespace SolPyme.Saml2.Tests
 {
@@ -72,6 +73,23 @@ namespace SolPyme.Saml2.Tests
             e.AddAttributeIfNotNullOrEmpty("attribute", new EmptyToString());
 
             e.Attribute("attribute").Should().BeNull();
+        }
+
+        [TestMethod]
+        public void XmlHelpers_GetValueIfNotNull_NullOnNull()
+        {
+            XmlAttribute x = null;
+            x.GetValueIfNotNull().Should().BeNull();
+        }
+
+        [TestMethod]
+        public void XmlHelpers_GetValueIfNotNull_ValueOnNotNull()
+        {
+            var xd = new XmlDocument();
+            var a = xd.CreateAttribute("someAttribute");
+            a.Value = "SomeValue";
+
+            a.GetValueIfNotNull().Should().Be("SomeValue");
         }
     }
 }

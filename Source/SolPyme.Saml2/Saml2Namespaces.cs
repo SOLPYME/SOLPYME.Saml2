@@ -28,5 +28,10 @@ namespace SolPyme.Saml2
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly XNamespace Saml2 = XNamespace.Get(Saml2Name);
+
+        /// <summary>
+        /// Namespace for Xml Dsig Signatures
+        /// </summary>
+        public const string DsigName = "http://www.w3.org/2000/09/xmldsig#";
     }
 }
