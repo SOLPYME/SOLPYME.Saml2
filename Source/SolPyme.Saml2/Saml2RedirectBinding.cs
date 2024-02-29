@@ -21,7 +21,7 @@ namespace SolPyme.Saml2
 
             return new CommandResult()
             {
-                HttpStatusCode = HttpStatusCode.Found,
+                HttpStatusCode = HttpStatusCode.SeeOther,
                 Location = redirectUri
             };
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
+using System.Security.Claims;
 using System.Web;
 
 namespace SolPyme.Saml2
@@ -11,6 +12,7 @@ namespace SolPyme.Saml2
         public HttpCacheability Cacheability { get; set; }
         public Uri Location { get; set; }
         public CommandResultErrorCode ErrorCode { get; set; }
+        public ClaimsPrincipal Principal { get; set; }
 
         public CommandResult()
         {
@@ -22,7 +24,7 @@ namespace SolPyme.Saml2
         {
             response.Cache.SetCacheability(Cacheability);
 
-            if (HttpStatusCode == System.Net.HttpStatusCode.Found)
+            if (HttpStatusCode == HttpStatusCode.SeeOther)
             {
                 response.Redirect(Location.ToString());
             }
