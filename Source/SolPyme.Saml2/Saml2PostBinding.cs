@@ -15,9 +15,10 @@ namespace SolPyme.Saml2
 
         public override Saml2Response Unbind(HttpRequestBase request)
         {
-            Convert.FromBase64String(request.Form["SAMLResponse"]);
+            var xml = Encoding.UTF8.GetString(
+                Convert.FromBase64String(request.Form["SAMLResponse"]));
 
-            throw new NotImplementedException();
+            return Saml2Response.Read(xml);
         }
     }
 }
