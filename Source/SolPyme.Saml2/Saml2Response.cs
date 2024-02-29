@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -13,6 +14,8 @@ namespace SolPyme.Saml2
     /// </summary>
     public class Saml2Response
     {
+        private readonly XmlDocument xmlDocument;
+
         /// <summary>
         /// Read the supplied Xml and parse it into a response.
         /// </summary>
@@ -40,6 +43,8 @@ namespace SolPyme.Saml2
 
         private Saml2Response(XmlDocument xml)
         {
+            xmlDocument = xml;
+
             id = xml.FirstChild.Attributes["ID"].Value;
 
             issueInstant = DateTime.Parse(xml.FirstChild.Attributes["IssueInstant"].Value,
@@ -71,5 +76,16 @@ namespace SolPyme.Saml2
         /// Status code of the message according to the SAML2 spec section 3.2.2.2
         /// </summary>
         public Saml2StatusCode Status { get { return status; } }
+
+        /// <summary>
+        /// Issuer (= sender) of the response.
+        /// </summary>
+        public string Issuer
+        {
+            get
+            {
+                return xmlDocument.FirstChild.Attributes["Issuer"].Value;
+            }
+        }
     }
 }
