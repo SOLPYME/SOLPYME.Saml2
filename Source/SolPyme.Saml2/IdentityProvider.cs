@@ -35,7 +35,8 @@ namespace SolPyme.Saml2
         {
             return new Saml2AuthenticationRequest()
             {
-                DestinationUri = DestinationUri
+                DestinationUri = DestinationUri,
+                AssertionConsumerServiceUrl = Saml2AuthenticationModuleSection.Current.AssertionConsumerServiceUrl
             };
         }
 
