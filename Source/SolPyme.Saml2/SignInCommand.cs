@@ -10,6 +10,9 @@ namespace SolPyme.Saml2
     {
         public override CommandResult Run()
         {
+            // Create AuthnRequest.
+            // Get the right binding.
+            // Get the result from the binding.
             throw new NotImplementedException();
         }
     }
