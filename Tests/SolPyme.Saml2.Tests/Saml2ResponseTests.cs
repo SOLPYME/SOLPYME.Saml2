@@ -142,12 +142,15 @@ namespace SolPyme.Saml2.Tests
             var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xml);
 
-            var signedXml = new SignedXml(xmlDoc);
+            var signedXml = new SignedXml(xmlDoc)
+            {
+                SigningKey = (RSACryptoServiceProvider)testCert.PrivateKey
+            };
 
-            signedXml.SigningKey = (RSACryptoServiceProvider)testCert.PrivateKey;
-
-            var reference = new Reference();
-            reference.Uri = "";
+            var reference = new Reference
+            {
+                Uri = ""
+            };
             reference.AddTransform(new XmlDsigEnvelopedSignatureTransform());
 
             signedXml.AddReference(reference);
