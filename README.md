@@ -8,5 +8,10 @@ como un proveedor de servicios (SP) SAML2.
 Saml2AuthenticationModule sigue el modelo de WSFederationAuthenticationModule para proporcionar autenticación Saml2 a sitios web IIS. En muchos casos, simplemente debe configurarse y funcionar sin ningún código escrito en la aplicación (aunque es necesario proporcionar un ClaimsAuthenticationModule propio para la traducción de reclamos).
 muy recomendable).
 
+### Clases de protocolo
+Las clases de manejo de protocolos que utiliza Saml2AuthenticationModule están disponibles
+también como API pública, lo que permite reutilizar algunos de los componentes internos para escribir
+un propio proveedor de servicios.
+
 ## SlidingExpirationSessionAuthenticationModule
 El SlidingExpirationSessionAuthenticationModule es una ventaja, agrega caducidad deslizante a las sesiones tal como funciona FormsAuthentication de forma inmediata.
