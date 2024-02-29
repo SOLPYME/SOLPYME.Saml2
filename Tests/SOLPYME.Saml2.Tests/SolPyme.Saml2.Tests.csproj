@@ -61,6 +61,7 @@
     <Compile Include="CommandFactoryTests.cs" />
     <Compile Include="Saml2AuthenticationRequestTests.cs" />
     <Compile Include="Saml2RequestBaseTests.cs" />
+    <Compile Include="XmlHelpersTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
