@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 
 namespace SolPyme.Saml2
 {
@@ -23,8 +18,14 @@ namespace SolPyme.Saml2
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly XNamespace Saml2P = XNamespace.Get(Saml2PName);
 
+        /// <summary>
+        /// Namespace of SAML2 assertions.
+        /// </summary>
         public const string Saml2Name = "urn:oasis:names:tc:SAML:2.0:assertion";
 
+        /// <summary>
+        /// Namespace of SAML2 assertions.
+        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2104:DoNotDeclareReadOnlyMutableReferenceTypes")]
         public static readonly XNamespace Saml2 = XNamespace.Get(Saml2Name);
     }
