@@ -42,6 +42,7 @@
       <HintPath>..\..\packages\NSubstitute.1.6.1.0\lib\NET40\NSubstitute.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -63,13 +64,14 @@
     <Compile Include="CommandFactoryTests.cs" />
     <Compile Include="NotFoundCommandTests.cs" />
     <Compile Include="CommandResultTests.cs" />
-    <Compile Include="Saml2PostBindingTests.cs" />
     <Compile Include="Saml2RequestBaseTests.cs" />
     <Compile Include="Saml2AuthenticationRequestTests.cs" />
     <Compile Include="IdentityProviderTests.cs" />
     <Compile Include="SignInCommandTests.cs" />
     <Compile Include="Saml2ResponseTests.cs" />
     <Compile Include="AcsCommandTests.cs" />
+    <Compile Include="Saml2PostBindingTests.cs" />
+    <Compile Include="Saml2BindingTests.cs" />
     <Compile Include="XmlHelpersTests.cs" />
   </ItemGroup>
   <ItemGroup>
