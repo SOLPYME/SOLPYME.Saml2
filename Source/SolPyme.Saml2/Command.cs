@@ -7,5 +7,6 @@ namespace SolPyme.Saml2
 {
     abstract class Command
     {
+        public abstract CommandResult Run();
     }
 }

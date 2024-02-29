@@ -10,7 +10,7 @@ namespace SolPyme.Saml2.Tests
         [TestMethod]
         public void CommandFactory_Invalid_ReturnsNotFound()
         {
-            CommandFactory.GetCommand("foo").Should().BeOfType<NotFoundCommand>();
+            CommandFactory.GetCommand().Should().BeOfType<NotFoundCommand>();
         }
     }
 }

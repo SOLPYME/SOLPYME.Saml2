@@ -1,13 +1,17 @@
-﻿using SolPyme.Saml2;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 
 namespace SolPyme.Saml2
 {
     class NotFoundCommand : Command
     {
+        public override CommandResult Run()
+        {
+            return new CommandResult()
+            {
+                HttpStatusCode = HttpStatusCode.NotFound
+            };
+        }
     }
 }

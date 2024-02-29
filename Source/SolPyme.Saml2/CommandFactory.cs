@@ -14,13 +14,9 @@ namespace SolPyme.Saml2
     {
         private static readonly Command notFoundCommand = new NotFoundCommand();
 
-        public static Command GetCommand(string path)
+        public static Command GetCommand()
         {
-            switch (path)
-            {
-                default:
-                    return notFoundCommand;
-            }
+            return notFoundCommand;
         }
     }
 }
