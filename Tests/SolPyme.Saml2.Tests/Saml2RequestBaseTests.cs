@@ -1,10 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FluentAssertions;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace SolPyme.Saml2.Tests
 {
@@ -28,6 +25,12 @@ namespace SolPyme.Saml2.Tests
             var id = new ConcreteSaml2Request().Id;
 
             Regex.IsMatch(id, "[^:0-9][^:]*").Should().BeTrue();
+        }
+
+        [TestMethod]
+        public void Saml2RequestBase_Version()
+        {
+            new ConcreteSaml2Request().Version.Should().Be("2.0");
         }
     }
 }
