@@ -10,6 +10,7 @@ namespace SolPyme.Saml2
         public HttpStatusCode HttpStatusCode { get; set; }
         public HttpCacheability Cacheability { get; set; }
         public Uri Location { get; set; }
+        public CommandResultErrorCode ErrorCode { get; set; }
 
         public CommandResult()
         {
