@@ -20,7 +20,7 @@ namespace SolPyme.Saml2
             Cacheability = HttpCacheability.NoCache;
         }
 
-        public void Apply(HttpResponse response)
+        public void Apply(HttpResponseBase response)
         {
             response.Cache.SetCacheability(Cacheability);
 
